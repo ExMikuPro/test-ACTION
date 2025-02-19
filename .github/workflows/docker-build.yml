@@ -35,10 +35,10 @@ jobs:
             - name: Cache dependencies after installation
               uses: actions/cache@v3
               with:
-              path: |
-                  ~/.bun/cache
-                  node_modules
-              key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+                  path: |
+                    ~/.bun/cache
+                    node_modules
+                  key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
 
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v2
