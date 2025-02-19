@@ -15,6 +15,12 @@ jobs:
               with:
                   fetch-depth: 0  # 确保获取所有历史记录和标签
 
+            - name: Install Bun
+              run: |
+                curl -fsSL https://bun.sh/install | bash
+                export BUN_INSTALL="$HOME/.bun"
+                export PATH="$BUN_INSTALL/bin:$PATH"
+
             - name: Cache turbo build setup
               uses: actions/cache@v4
               with:
