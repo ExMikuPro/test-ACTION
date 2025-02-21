@@ -64,12 +64,12 @@ jobs:
         run: |
           previous_tag=$(git describe --tags --abbrev=0 HEAD^)
             echo "Previous tag: $previous_tag"
-            old_version=$(docker pull ghcr.io/${{ github.actor }}/hetu:latest || echo "")
+            old_version=$(docker pull ghcr.io/${{ secrets.GITHUB_TOKEN }}/hetu:latest || echo "")
             if [ -n "$old_version" ]; then
               # Here you can decide how you want to compute the version, for now, using a simple v*.*
               version="$previous_tag"  # You can compute this dynamically or use commit hashes
-              docker tag ghcr.io/${{ github.actor }}/hetu:latest ghcr.io/${{ github.actor }}/hetu:$version
-              docker push ghcr.io/${{ github.actor }}/hetu:$version
+              docker tag ghcr.io/${{ secrets.GITHUB_TOKEN }}/hetu:latest ghcr.io/${{ secrets.GITHUB_TOKEN }}/hetu:$version
+              docker push ghcr.io/${{ secrets.GITHUB_TOKEN }}/hetu:$version
             fi
       
       - name: Push Docker image
