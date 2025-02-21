@@ -48,7 +48,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/${{ github.actor }}/hetu:latest --push .
+          docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/${{ secrets.DOCKER_USERNAME }}/hetu:latest --push .
 
   Push-ghcr:
     needs: Build-Docker
