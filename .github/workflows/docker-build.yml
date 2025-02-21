@@ -62,6 +62,7 @@ jobs:
 
       - name: Build Docker image
         run: |
+          ls
           docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/${{ secrets.DOCKER_USERNAME }}/hetu:latest --push -f ./Dockerfile .
 
   Push-ghcr:
