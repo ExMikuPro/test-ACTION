@@ -32,7 +32,7 @@ jobs:
         run: |
           bun install
           bun --bun run build
-          ls apps/backend/dist
+          ls
 
       - name: List files
         run: |
