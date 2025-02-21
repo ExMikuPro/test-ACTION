@@ -45,7 +45,7 @@ jobs:
           name: Builder
           path: |
             apps/backend/dist/*
-            Dockerfile
+            /home/runner/work/test-ACTION/test-ACTION/Dockerfile
   
 
   Build-Docker:
