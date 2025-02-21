@@ -33,6 +33,14 @@ jobs:
           bun install
           bun --bun run build
           ls apps/backend/dist
+
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Builder
+          path: |
+            apps/backend/dist/*
+            ./Dockerfile
   
 
   Build-Docker:
@@ -45,6 +53,12 @@ jobs:
       - name: Create buildx cache directory
         run: |
           mkdir -p /tmp/.buildx-cache  # 确保缓存目录存在
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: Builder
+          path: build
 
       - name: Build Docker image
         run: |
