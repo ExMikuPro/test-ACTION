@@ -32,7 +32,7 @@ jobs:
               run: |
                   bun install
                   bun --bun run build
-                  ls
+                  ls apps/backend/dist
 
 #            - name: Set up Docker Buildx
 #              uses: docker/setup-buildx-action@v2
