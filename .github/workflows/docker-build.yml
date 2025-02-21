@@ -33,7 +33,7 @@ jobs:
                 ls
 
             - name: Cache dependencies after installation
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               with:
                   path: |
                     ~/.bun/cache
