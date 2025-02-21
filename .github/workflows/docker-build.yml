@@ -65,11 +65,10 @@ jobs:
           name: Builder
           path: |
             build
-            Dockerfile
 
       - name: Build Docker image
         run: |
-          ls -alh
+          ls -alh build
           docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/${{ secrets.DOCKER_USERNAME }}/hetu:latest --push .
 
   Push-ghcr:
