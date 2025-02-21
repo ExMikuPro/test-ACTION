@@ -8,6 +8,6 @@ FROM oven/bun:1 AS build
 WORKDIR /app
 
 # 复制项目代码到容器
-COPY apps/backend/dist/. .
+COPY build/. .
 
 CMD ["bun run index.js"]
